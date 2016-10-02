@@ -1,1 +1,33 @@
-Hello World
+<body style="margin: 0">
+<script type="text/javascript">
+
+const th = require('three')
+
+const scene = new th.Scene()
+const camera = new th.PerspectiveCamera(45, innerWidth/innerHeight, 1, 100000)
+const renderer = new th.WebGLRenderer()
+document.body.appendChild(renderer.domElement)
+
+const resize = () => {
+    renderer.setSize(innerWidth, innerHeight)
+    camera.aspect = innerWidth / innerHeight
+    camera.updateProjectionMatrix()
+}
+addEventListener("resize", resize)
+resize()
+
+function render() {
+    requestAnimationFrame(render)
+    renderer.render(scene, camera)
+}
+
+scene.add(new th.Mesh(new th.BoxGeometry(1, 1, 1), new th.MeshBasicMaterial({
+  color: 0xff7733,
+  wireframe: true
+})))
+camera.position.z = 2
+
+render()
+
+</script>
+</body>

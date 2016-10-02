@@ -1,7 +1,7 @@
 {
-  "name": "electron-app-minimal",
+  "name": "electron-three-minimal",
   "version": "0.0.0",
-  "description": "Simple template. Supports naitive node modules.",
+  "description": "Simple template.",
   "scripts": {
     "start": "electron app",
     "postinstall": "cd app && npm install && electron-rebuild -m node_modules --pre-gyp-fix"
